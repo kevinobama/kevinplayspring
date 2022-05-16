@@ -113,33 +113,3 @@ While you can always create a Spring project manually, the spring initializer (h
 The spring initializer provides a centralized platform to easily create a Spring project with different options, including project type (Maven/Gradle), language (Java, Kotlin, Groovy), Project metadata, Packaging, Java version, and dependencies.
 
 We will create a simple Maven Project named test_app in com.myproject group using Java and Spring Boot 2.5.5 targeting Java 17 (OpenJDK) with Spring Web as the dependency.
-
-Spring Intializr
-The above action will generate a zip file. Extract that zip file and open the folder in the IDE. Since we are using Visual Studio Code as our IDE, make sure that you have installed the appropriate VSCode extensions to support Java and Spring. Following are the recommended extensions.
-
-Extension Pack for Java – Visual Studio Marketplace
-Spring Boot Extension Pack – Visual Studio Marketplace
-Navigate to the primary java file (Example :<Name>\src\main\java\com\myproject\test_app\TestAppApplication.java) and change the code as follows. It will create a simple web server that returns a greeting when a user navigates to the greetings URL.
-
-Copy
-package com.myproject.test_app;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-@SpringBootApplication
-@RestController
-public class TestAppApplication {
-public static void main(String[] args) {
-SpringApplication.run(TestAppApplication.class, args);
-}
-@GetMapping("/greeting")
-public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-return String.format("<h1>Hello %s!, This is My First Spring Project</h1>", name);
-}
-}
-VS Code view:
-
-Code Editor
-Now we can build and execute the project by opening the terminal in the root of the project folder and running the following command.
