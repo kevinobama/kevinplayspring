@@ -1,6 +1,7 @@
 package com.kevingates.kevinplayspring.console;
 
 import com.kevingates.kevinplayspring.component.ComponentUser;
+import com.kevingates.kevinplayspring.defineannotation.KevinAutowired;
 import com.kevingates.kevinplayspring.models.Nft;
 import com.kevingates.kevinplayspring.models.Order;
 import com.kevingates.kevinplayspring.models.User;
@@ -18,7 +19,8 @@ import org.springframework.util.StringUtils;
 @Component
 public class ShopConsole implements CommandLineRunner {
 
-    @Autowired
+    @KevinAutowired
+    //private User user = new User();
     private User user;
 
     @Autowired

@@ -4,7 +4,7 @@ public class User {
     private UserProfile userProfile;
 
     public String getName() {
-        return name;
+        return name+" This is user class";
     }
 
     public void setName(String name) {
